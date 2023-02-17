@@ -1,12 +1,13 @@
 import React from "react";
 import DeleteBtn from "./DeleteBtn";
 import EditBtn from "./EditBtn";
+import Checkbox from "./Checkbox";
 
 function TaskCard() {
   return (
-    <div className="task-card">
-      <p>TaskCard here</p>
-    </div>
+    <li className="task-card">
+      <Checkbox></Checkbox>
+    </li>
   );
 }
 
