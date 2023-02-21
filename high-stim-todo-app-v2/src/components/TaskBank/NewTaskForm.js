@@ -15,7 +15,6 @@ const NewTaskForm = (props) => {
       props.onSubmit(newTaskValue.trim());
       setNewTaskValue("");
     }
-    console.log(newTaskValue);
   };
   return (
     <form className="new-task-form" onSubmit={handleSubmit}>
