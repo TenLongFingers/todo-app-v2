@@ -15,8 +15,10 @@ BUTTONS
 <button className="add-new-task-btn" type="submit"> the submit button on the NewTaskForm (NewTaskForm)
     icon: <i className="fa-solid fa-plus"
 
-<button className="Edit-btn"> Edits the TaskCard (TaskCard)
+<button className="edit-btn"> Edits the TaskCard (TaskCard)
     icon:<i class="fa-solid fa-pencil">
+<button className="done-edit-btn"> Submits edit to the TaskCard (TaskCard)
+    no icon, just text
 <button className="delete-btn"> Deletes the TaskCard (TaskCard)
     icon: <i class="fa-solid fa-trash">
 <button className="checkbox-btn"> Checks TaskCard as complete (TaskCard)
