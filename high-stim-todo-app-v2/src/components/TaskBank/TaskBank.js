@@ -2,10 +2,12 @@ import React from "react";
 import NewTaskForm from "./NewTaskForm";
 import TaskCard from "../TaskCard/TaskCard";
 
-function TaskBank() {
+function TaskBank(props) {
   return (
     <section className="task-bank">
-      <ul class="task-bank-list"></ul>
+      <ul className="task-bank-list">
+        <li>{props.value}</li>
+      </ul>
       <NewTaskForm></NewTaskForm>
       <TaskCard></TaskCard>
     </section>
