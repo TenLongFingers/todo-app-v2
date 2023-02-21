@@ -5,7 +5,7 @@ import Checkbox from "./Checkbox";
 
 function TaskCard(props) {
   //for the edit button
-  const [editing, setEditing] = useState(props.value);
+  const [editing, setEditing] = useState(false);
   const [inputValue, setInputValue] = useState(props.value);
 
   const handleEditBtnClick = () => {
@@ -17,7 +17,7 @@ function TaskCard(props) {
   };
 
   //For the submit button when user finishes editing
-  const handleSubmit = () => {
+  const handleDoneBtn = () => {
     props.onEdit(props.index, inputValue);
     setEditing(false);
   };
@@ -31,26 +31,19 @@ function TaskCard(props) {
           value={inputValue}
           onChange={handleTaskInputChange}
         />
-        <button onClick={handleSubmit}> Done </button>
+        <button onClick={handleDoneBtn}> Done </button>
       </li>
     );
   } else {
     return (
       <li>
+        <Checkbox />
         {props.value}
-        <EditBtn onClick={handleEditBtnClick} index={props.index} />
+        <button onClick={handleEditBtnClick}>Edit</button>
+        <DeleteBtn />
       </li>
     );
   }
-
-  //   return (
-  //     <li className="task-card">
-  //       <Checkbox />
-  //       {props.value}
-  //       <EditBtn />
-  //       <DeleteBtn />
-  //     </li>
-  //   );
 }
 
 export default TaskCard;

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 const EditBtn = (props) => {
-  const handleEditBtnClick = () => {
+  const handleClick = () => {
     props.onClick(props.index);
   };
 
   return;
-  <button className="edit-btn" onClick={handleEditBtnClick}>
-    edit
+  <button className="edit-btn" onClick={handleClick}>
+    Edit
   </button>;
 };
 
