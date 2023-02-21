@@ -7,7 +7,6 @@ function TaskCard() {
   return (
     <li className="task-card">
       <Checkbox></Checkbox>
-      Task input here
       <EditBtn></EditBtn>
       <DeleteBtn></DeleteBtn>
     </li>
