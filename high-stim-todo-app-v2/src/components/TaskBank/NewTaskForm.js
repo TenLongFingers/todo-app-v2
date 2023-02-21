@@ -17,6 +17,7 @@ const NewTaskForm = (props) => {
     }
   };
   return (
+    //JSX
     <form className="new-task-form" onSubmit={handleSubmit}>
       <input
         type="text"

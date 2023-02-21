@@ -7,9 +7,9 @@ function TaskCard(props) {
   return (
     <li className="task-card">
       {props.value}
-      <Checkbox></Checkbox>
-      <EditBtn></EditBtn>
-      <DeleteBtn></DeleteBtn>
+      <Checkbox />
+      <EditBtn />
+      <DeleteBtn />
     </li>
   );
 }
