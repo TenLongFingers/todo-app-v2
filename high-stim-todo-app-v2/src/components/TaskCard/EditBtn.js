@@ -2,9 +2,9 @@ import React from "react";
 
 function EditBtn() {
   return (
-    <div className="Edit-btn">
-      <p>Edit here</p>
-    </div>
+    <button className="Edit-btn">
+      <i class="fa-solid fa-pencil" />
+    </button>
   );
 }
 

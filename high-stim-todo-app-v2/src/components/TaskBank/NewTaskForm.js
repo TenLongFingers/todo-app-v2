@@ -27,7 +27,7 @@ const NewTaskForm = (props) => {
         onChange={handleChange}
       ></input>
       <button className="add-new-task-btn" type="submit">
-        <i className="fa-solid fa-plus"></i>
+        <i className="fa-solid fa-plus" />
         Add
       </button>
     </form>

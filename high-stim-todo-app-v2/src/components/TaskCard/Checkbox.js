@@ -1,9 +1,10 @@
 import React from "react";
 
+//I could make this a normal checkbox, but I want to do more with it.
 function Checkbox() {
   return (
     <button className="checkbox-btn">
-      <p>Checkbox here</p>
+      <i class="fa-regular fa-square-check" />
     </button>
   );
 }

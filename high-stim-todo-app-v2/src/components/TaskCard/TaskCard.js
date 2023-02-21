@@ -6,8 +6,8 @@ import Checkbox from "./Checkbox";
 function TaskCard(props) {
   return (
     <li className="task-card">
-      {props.value}
       <Checkbox />
+      {props.value}
       <EditBtn />
       <DeleteBtn />
     </li>

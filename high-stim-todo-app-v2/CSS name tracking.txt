@@ -1,0 +1,27 @@
+
+TaskCard
+<li className="task-card"> The actual TaskCard component herself
+
+NewTaskForm
+ <input type="text" className="task-form-input" name="newTaskValue"> The input box
+
+TaskBank
+<form className="new-task-form"> The form for adding a new task
+<section className="task-bank"> The container for the list. This will be a drag-and-droppable area.
+<ul className="task-bank-list"> The list of TaskCard items.
+
+
+BUTTONS
+<button className="add-new-task-btn" type="submit"> the submit button on the NewTaskForm (NewTaskForm)
+    icon: <i className="fa-solid fa-plus"
+
+<button className="Edit-btn"> Edits the TaskCard (TaskCard)
+    icon:<i class="fa-solid fa-pencil">
+<button className="delete-btn"> Deletes the TaskCard (TaskCard)
+    icon: <i class="fa-solid fa-trash">
+<button className="checkbox-btn"> Checks TaskCard as complete (TaskCard)
+    icon: <i class="fa-regular fa-square-check">
+
+ICONS
+<i className="fa-solid fa-plus"> the + sign on NewTaskForm. This is a submit button. (NewTaskForm)
+
