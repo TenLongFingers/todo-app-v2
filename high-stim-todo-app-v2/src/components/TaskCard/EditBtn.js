@@ -5,10 +5,11 @@ const EditBtn = (props) => {
     props.onClick(props.index);
   };
 
-  return;
-  <button className="edit-btn" onClick={handleClick}>
-    Edit
-  </button>;
+  return (
+    <button className="edit-btn" onClick={handleClick}>
+      Edit
+    </button>
+  );
 };
 
 export default EditBtn;
