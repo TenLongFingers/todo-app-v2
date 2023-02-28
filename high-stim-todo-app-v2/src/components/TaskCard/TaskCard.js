@@ -3,14 +3,9 @@ import DeleteBtn from "./DeleteBtn";
 import Checkbox from "./Checkbox";
 
 function TaskCard(props) {
-  console.log(props);
   //for the edit button
   const [editing, setEditing] = useState(false);
   const [inputValue, setInputValue] = useState(props.value);
-
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
-  };
 
   const handleEditBtnClick = () => {
     setEditing(true);
@@ -22,6 +17,7 @@ function TaskCard(props) {
 
   //For the submit button when user finishes editing
   const handleDoneBtn = () => {
+    props.onEdit(props.index, inputValue);
     setEditing(false);
   };
 
