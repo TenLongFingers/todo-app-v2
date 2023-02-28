@@ -4,7 +4,7 @@ import React from "react";
 function Checkbox() {
   return (
     <button className="checkbox-btn">
-      <i class="fa-regular fa-square-check" />
+      <i className="fa-regular fa-square-check" />
     </button>
   );
 }

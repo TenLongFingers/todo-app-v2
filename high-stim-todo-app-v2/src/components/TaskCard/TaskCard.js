@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import DeleteBtn from "./DeleteBtn";
-import EditBtn from "./EditBtn";
 import Checkbox from "./Checkbox";
 
 function TaskCard(props) {
+  console.log(props);
   //for the edit button
   const [editing, setEditing] = useState(false);
   const [inputValue, setInputValue] = useState(props.value);
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
   const handleEditBtnClick = () => {
     setEditing(true);
@@ -18,7 +22,6 @@ function TaskCard(props) {
 
   //For the submit button when user finishes editing
   const handleDoneBtn = () => {
-    props.onEdit(props.index, inputValue);
     setEditing(false);
   };
 
@@ -39,7 +42,9 @@ function TaskCard(props) {
       <li>
         <Checkbox />
         {props.value}
-        <button onClick={handleEditBtnClick}>Edit</button>
+        <button onClick={handleEditBtnClick}>
+          <i className="fa-solid fa-pencil" />
+        </button>
         <DeleteBtn />
       </li>
     );
