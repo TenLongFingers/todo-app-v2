@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import Checkbox from "./Checkbox";
 
 function TaskCard(props) {
-  //for the edit button
+  //For the edit button
   const [editing, setEditing] = useState(false);
   const [inputValue, setInputValue] = useState(props.value);
 
+  //changes state to editing
   const handleEditBtn = () => {
     setEditing(true);
   };
 
+  //tracks changes so they can be passed as a prop in the input form and update the input value
   const handleTaskInputChange = (e) => {
     setInputValue(e.target.value);
   };
