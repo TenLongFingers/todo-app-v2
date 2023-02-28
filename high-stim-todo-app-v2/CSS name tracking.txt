@@ -16,13 +16,13 @@ BUTTONS
     icon: <i className="fa-solid fa-plus"
 
 <button className="edit-btn"> Edits the TaskCard (TaskCard)
-    icon:<i class="fa-solid fa-pencil">
+    icon:<i className="fa-solid fa-pencil">
 <button className="done-edit-btn"> Submits edit to the TaskCard (TaskCard)
     no icon, just text
 <button className="delete-btn"> Deletes the TaskCard (TaskCard)
-    icon: <i class="fa-solid fa-trash">
+    icon: <i className="fa-solid fa-trash">
 <button className="checkbox-btn"> Checks TaskCard as complete (TaskCard)
-    icon: <i class="fa-regular fa-square-check">
+    icon: <i className="fa-regular fa-square-check">
 
 ICONS
 <i className="fa-solid fa-plus"> the + sign on NewTaskForm. This is a submit button. (NewTaskForm)

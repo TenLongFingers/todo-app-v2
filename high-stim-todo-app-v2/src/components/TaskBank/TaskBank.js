@@ -15,13 +15,25 @@ function TaskBank() {
     setTaskBankList(newTaskBankList);
   };
 
+  const deleteTask = (index) => {
+    const newTaskBankList = [...taskBankList];
+    newTaskBankList.splice(index, 1);
+    setTaskBankList(newTaskBankList);
+  };
+
   //JSX
   return (
     <section className="task-bank">
       <NewTaskForm onSubmit={addTask} />
       <ul className="task-bank-list">
         {taskBankList.map((task, index) => (
-          <TaskCard key={index} value={task} index={index} onEdit={editTask} />
+          <TaskCard
+            key={index}
+            value={task}
+            index={index}
+            onEdit={editTask}
+            onDelete={deleteTask}
+          />
         ))}
       </ul>
     </section>
