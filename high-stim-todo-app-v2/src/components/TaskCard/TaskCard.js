@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Checkbox from "./Checkbox";
 
 function TaskCard(props) {
   //For the edit button
@@ -18,6 +17,11 @@ function TaskCard(props) {
 
   //for the delete button
   const handleDeleteBtn = () => {
+    props.onDelete(props.index);
+  };
+
+  //for the checkbox. It's just delete right now, but I want a different function so I can target it for animations
+  const handleCheckbox = () => {
     props.onDelete(props.index);
   };
 
@@ -42,7 +46,7 @@ function TaskCard(props) {
   } else {
     return (
       <li>
-        <Checkbox />
+        <input type="checkbox" onChange={handleCheckbox}></input>
         {props.value}
         <button onClick={handleEditBtn}>
           <i className="fa-solid fa-pencil" />
