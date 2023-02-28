@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./TaskCard.css";
 
 function TaskCard(props) {
   //For the edit button
@@ -35,7 +36,11 @@ function TaskCard(props) {
   if (editing) {
     return (
       <li>
+        <label htmlFor="taskInput">
+          <span className="visually-hidden">editing task {inputValue}</span>
+        </label>
         <input
+          name="edit task input field"
           type="text"
           value={inputValue}
           onChange={handleTaskInputChange}
@@ -46,7 +51,16 @@ function TaskCard(props) {
   } else {
     return (
       <li>
-        <input type="checkbox" onChange={handleCheckbox}></input>
+        <label htmlFor="checkbox">
+          <span className="visually-hidden">
+            click to complete the task {inputValue}
+          </span>
+        </label>
+        <input
+          type="checkbox"
+          name="checkbox"
+          onChange={handleCheckbox}
+        ></input>
         {props.value}
         <button onClick={handleEditBtn}>
           <i className="fa-solid fa-pencil" />
