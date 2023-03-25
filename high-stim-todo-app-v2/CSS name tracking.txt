@@ -3,27 +3,38 @@ TaskCard
 <li className="task-card"> The actual TaskCard component herself
 
 NewTaskForm
- <input type="text" className="task-form-input" name="newTaskValue"> The input box
+<div id="new-task-form-container"> The container for the task form. This allowed me to add labels for accessibility.
+<form id="new-task-form"> The whole form itself, including the input box (given its own id below for styling reasons)
+<input type="text" id="task-form-input" name="newTaskValue"> The input box
 
 TaskBank
-<form className="new-task-form"> The form for adding a new task
+<form id="new-task-form"> The form for adding a new task
 <section className="task-bank"> The container for the list. This will be a drag-and-droppable area.
 <ul className="task-bank-list"> The list of TaskCard items.
 
 
 BUTTONS
-<button className="add-new-task-btn" type="submit"> the submit button on the NewTaskForm (NewTaskForm)
+<button id="add-new-task-btn" type="submit"> the submit button on the NewTaskForm (NewTaskForm)
     icon: <i className="fa-solid fa-plus"
 
-<button className="edit-btn"> Edits the TaskCard (TaskCard)
+<button id="edit-btn"> Edits the TaskCard (TaskCard)
     icon:<i className="fa-solid fa-pencil">
 <button className="done-edit-btn"> Submits edit to the TaskCard (TaskCard)
     no icon, just text
-<button className="delete-btn"> Deletes the TaskCard (TaskCard)
+<button id="delete-btn"> Deletes the TaskCard (TaskCard)
     icon: <i className="fa-solid fa-trash">
-<button className="checkbox-btn"> Checks TaskCard as complete (TaskCard)
+<input type="checkbox" name="checkbox"> Checks TaskCard as complete (TaskCard)
     icon: <i className="fa-regular fa-square-check">
 
 ICONS
 <i className="fa-solid fa-plus"> the + sign on NewTaskForm. This is a submit button. (NewTaskForm)
+
+HIDDEN ACCESSIBILITY CLASS
+ .visually-hidden {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+} 
 

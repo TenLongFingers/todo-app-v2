@@ -16,21 +16,25 @@ const NewTaskForm = (props) => {
       setNewTaskValue("");
     }
   };
+
   return (
     //JSX
-    <form className="new-task-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="task-form-input"
-        name="newTaskValue"
-        value={newTaskValue}
-        onChange={handleChange}
-      ></input>
-      <button className="add-new-task-btn" type="submit">
-        <i className="fa-solid fa-plus" />
-        Add
-      </button>
-    </form>
+    <div id="new-task-form-container">
+      <form id="new-task-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          id="task-form-input"
+          name="newTaskValue"
+          value={newTaskValue}
+          onChange={handleChange}
+          aria-label="Enter a new task"
+        />
+        <button id="add-new-task-btn" type="submit">
+          <i className="fa-solid fa-plus" />
+          Add
+        </button>
+      </form>
+    </div>
   );
 };
 
