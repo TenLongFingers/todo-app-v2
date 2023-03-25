@@ -51,9 +51,13 @@ function TaskCard(props) {
   } else {
     //the regular task, if it's not being edited
     return (
-      <Draggable>
-        {(provided) => (
-          <li {...provided.draggableProps} ref={provided.innerRef}>
+      <Draggable draggableId={props.draggableId} index={props.index}>
+        {(provided, snapshot) => (
+          <li
+            ref={provided.innerRef}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+          >
             {/* checkbox */}
             <label
               htmlFor="checkbox"

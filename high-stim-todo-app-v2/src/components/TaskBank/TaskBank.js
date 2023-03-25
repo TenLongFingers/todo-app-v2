@@ -21,13 +21,16 @@ function TaskBank() {
     newTaskBankList.splice(index, 1);
     setTaskBankList(newTaskBankList);
   };
+  const onDragEnd = (result) => {
+    //handle drag end here
+  };
 
   //JSX
   return (
     <section className="task-bank">
       <NewTaskForm onSubmit={addTask} />
-      <DragDropContext>
-        <Droppable droppableId="droppable-task-card">
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Droppable droppableId="task-bank-list">
           {(provided) => (
             <ul
               className="task-bank-list"
@@ -39,10 +42,12 @@ function TaskBank() {
                   key={index}
                   value={task}
                   index={index}
+                  draggableID={`task-${index}`}
                   onEdit={editTask}
                   onDelete={deleteTask}
                 />
               ))}
+              {provided.placeholder}
             </ul>
           )}
         </Droppable>
