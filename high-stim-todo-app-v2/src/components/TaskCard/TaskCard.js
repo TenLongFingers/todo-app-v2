@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Draggable } from "react-beautiful-dnd";
 
 function TaskCard(props) {
   //For the edit button
@@ -37,9 +38,6 @@ function TaskCard(props) {
   if (editing) {
     return (
       <li>
-        <label htmlFor="taskInput">
-          <span aria-label={`editing task ${inputValue}`}></span>
-        </label>
         <input
           name="edit task input field"
           type="text"
@@ -53,40 +51,41 @@ function TaskCard(props) {
   } else {
     //the regular task, if it's not being edited
     return (
-      //checkbox
-      <li>
-        <label
-          htmlFor="checkbox"
-          aria-label={`complete task ${inputValue}`}
-        ></label>
-        <input
-          type="checkbox"
-          name="checkbox"
-          onChange={handleCheckbox}
-          aria-label={`complete task ${inputValue}`}
-        ></input>
-
-        {/* Todo input */}
-        {props.value}
-
-        {/* edit button */}
-        <button
-          id="edit-btn"
-          onClick={handleEditBtn}
-          aria-label={`edit task ${inputValue}`}
-        >
-          <i className="fa-solid fa-pencil" />
-        </button>
-
-        {/* delete button */}
-        <button
-          id="delete-btn"
-          onClick={handleDeleteBtn}
-          aria-label={`delete task ${inputValue}`}
-        >
-          <i className="fa-solid fa-trash" />
-        </button>
-      </li>
+      <Draggable>
+        {(provided) => (
+          <li {...provided.draggableProps} ref={provided.innerRef}>
+            {/* checkbox */}
+            <label
+              htmlFor="checkbox"
+              aria-label={`complete task ${inputValue}`}
+            ></label>
+            <input
+              type="checkbox"
+              name="checkbox"
+              onChange={handleCheckbox}
+              aria-label={`complete task ${inputValue}`}
+            ></input>
+            {/* Todo input */}
+            {props.value}
+            {/* edit button */}
+            <button
+              id="edit-btn"
+              onClick={handleEditBtn}
+              aria-label={`edit task ${inputValue}`}
+            >
+              <i className="fa-solid fa-pencil" />
+            </button>
+            {/* delete button */}
+            <button
+              id="delete-btn"
+              onClick={handleDeleteBtn}
+              aria-label={`delete task ${inputValue}`}
+            >
+              <i className="fa-solid fa-trash" />
+            </button>
+          </li>
+        )}
+      </Draggable>
     );
   }
 }

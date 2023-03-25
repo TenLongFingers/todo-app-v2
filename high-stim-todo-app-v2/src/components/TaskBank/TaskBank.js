@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import NewTaskForm from "./NewTaskForm";
 import TaskCard from "../TaskCard/TaskCard";
 
@@ -25,17 +26,27 @@ function TaskBank() {
   return (
     <section className="task-bank">
       <NewTaskForm onSubmit={addTask} />
-      <ul className="task-bank-list">
-        {taskBankList.map((task, index) => (
-          <TaskCard
-            key={index}
-            value={task}
-            index={index}
-            onEdit={editTask}
-            onDelete={deleteTask}
-          />
-        ))}
-      </ul>
+      <DragDropContext>
+        <Droppable droppableId="droppable-task-card">
+          {(provided) => (
+            <ul
+              className="task-bank-list"
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+              {taskBankList.map((task, index) => (
+                <TaskCard
+                  key={index}
+                  value={task}
+                  index={index}
+                  onEdit={editTask}
+                  onDelete={deleteTask}
+                />
+              ))}
+            </ul>
+          )}
+        </Droppable>
+      </DragDropContext>
     </section>
   );
 }
