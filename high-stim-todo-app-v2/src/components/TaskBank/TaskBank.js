@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import NewTaskForm from "./NewTaskForm";
 import TaskCard from "../TaskCard/TaskCard";
 
@@ -42,7 +42,7 @@ function TaskBank() {
                   key={index}
                   value={task}
                   index={index}
-                  draggableID={`task-${index}`}
+                  draggableId={`task-${index}`}
                   onEdit={editTask}
                   onDelete={deleteTask}
                 />
