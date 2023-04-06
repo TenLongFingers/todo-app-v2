@@ -1,3 +1,4 @@
+import "./App.css";
 import TaskBank from "./components/TaskBank/TaskBank";
 
 <script
