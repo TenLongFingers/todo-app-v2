@@ -22,7 +22,7 @@ function TaskCard(props) {
     props.onDelete(props.index);
   };
 
-  //for the checkbox. It's just delete right now, but I want a different function so I can target it for animations
+  //for the checkbox. ADDLATER: It's just delete right now, but I want a different function so I can target it for animations
   const handleCheckbox = () => {
     props.onDelete(props.index);
   };
@@ -32,6 +32,14 @@ function TaskCard(props) {
     props.onEdit(props.index, inputValue);
     setEditing(false);
   };
+
+  //Draggable function
+  const [{ isDragging }, dragRef] = useDrag({
+    item: { type: "task-card", index: props.index },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  });
 
   //JSX
   if (editing) {
@@ -51,8 +59,9 @@ function TaskCard(props) {
     );
   } else {
     return (
-      //checkbox
-      <li>
+      //ADDLATER: grabber icon. (ADDLATER: for accessibility, add an option to make this a "add to bank" button instead of a grabber)
+      <li ref={dragRef}>
+        {/* checkbox */}
         <label
           htmlFor="checkbox"
           aria-label={`complete task ${inputValue}`}

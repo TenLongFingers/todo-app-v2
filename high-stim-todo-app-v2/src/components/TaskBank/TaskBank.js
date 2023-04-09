@@ -7,6 +7,7 @@ function TaskBank() {
 
   const addTask = (value) => {
     setTaskBankList([...taskBankList, value]);
+    console.log(taskBankList);
   };
 
   const editTask = (index, value) => {
