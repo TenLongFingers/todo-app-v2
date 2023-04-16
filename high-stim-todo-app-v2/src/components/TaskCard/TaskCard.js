@@ -35,7 +35,7 @@ function TaskCard(props) {
 
   //Draggable function
   const [{ isDragging }, dragRef] = useDrag({
-    item: { type: "task-card", index: props.index },
+    item: { type: "TASK-CARD", index: props.index, value: props.value },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),
@@ -59,8 +59,13 @@ function TaskCard(props) {
     );
   } else {
     return (
-      //ADDLATER: grabber icon. (ADDLATER: for accessibility, add an option to make this a "add to bank" button instead of a grabber)
-      <li ref={dragRef}>
+      <li>
+        {/* grabber icon */}
+        <button
+          id="grabber-icon"
+          ref={dragRef}
+          aria-label={`drag and drop grabber`}
+        ></button>
         {/* checkbox */}
         <label
           htmlFor="checkbox"
